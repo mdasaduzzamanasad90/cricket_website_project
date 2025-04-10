@@ -1,0 +1,10 @@
+.backgroundimg {
+    background-image: url('../../assets/images/cricketimg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.headerhight {
+    height: 510px;
+}

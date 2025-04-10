@@ -1,0 +1,64 @@
+[
+    {
+      "id": 1,
+      "name": "Virat Kohli",
+      "country": "India",
+      "image": "https://i.ibb.co.com/KjHDFRFf/virat-kohli.png",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": null,
+      "biddingPrice": 1500000
+    },
+    {
+      "id": 2,
+      "name": "Joe Root",
+      "country": "England",
+      "image": "https://i.ibb.co.com/SXRK4wk6/Joe-Root.jpg",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm offbreak",
+      "biddingPrice": 1200000
+    },
+    {
+      "id": 3,
+      "name": "Pat Cummins",
+      "country": "Australia",
+      "image": "https://i.ibb.co.com/rB83mTj/Pat-Cummins.jpg",
+      "role": "Bowler",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm fast",
+      "biddingPrice": 1800000
+    },
+    {
+      "id": 4,
+      "name": "Ben Stokes",
+      "country": "England",
+      "image": "https://i.ibb.co.com/qM3DZPtm/Ben-Stokes.jpg",
+      "role": "All-Rounder",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Right-arm fast-medium",
+      "biddingPrice": 2000000
+    },
+    {
+      "id": 5,
+      "name": "Shakib Al Hasan",
+      "country": "Bangladesh",
+      "image": "https://i.ibb.co.com/CKxmZFYW/Shakib-Al-Hasan.jpg",
+      "role": "All-Rounder",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Slow left-arm orthodox",
+      "biddingPrice": 1300000
+    },
+    {
+      "id": 6,
+      "name": "Kane Williamson",
+      "country": "New Zealand",
+      "image": "https://i.ibb.co.com/Ys7rTYf/Kane-Williamson.jpg",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm offbreak",
+      "biddingPrice": 1100000
+    }
+    
+  ]
+  
