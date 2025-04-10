@@ -7,11 +7,11 @@ const Footer = () => {
             </div>
             <div className='flex justify-between my-10 mx-40'>
                 <div className='text-left text-white'>
-                    <h1>About Us</h1>
+                    <h1 className='font-bold text-xl mb-5'>About Us</h1>
                     <p>We are a passionate team <br />dedicated to providing the best <br /> services to our customers.</p>
                 </div>
                 <div className='text-white text-left'>
-                    <h1>Quick Links</h1>
+                    <h1 className='font-bold text-xl mb-5'>Quick Links</h1>
                     <ul className='list-disc pl-5'>
                         <li>Home</li>
                         <li>Services</li>
@@ -20,12 +20,16 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className='text-white'>
-                    <h1>Subscribe</h1>
-                    <p className='text-left'>Subscribe to our newsletter for the <br /> latest updates.</p>
+                    <h1 className='font-bold text-xl mb-5'>Subscribe</h1>
+                    <p className='text-left mb-3'>Subscribe to our newsletter for the <br /> latest updates.</p>
+                    <div className=''>
+                        <input className='border rounded-l-lg px-3 h-8' placeholder="Enter your email" type="email" name="" id="" />
+                        <button className='font-bold border h-8 rounded-r-lg px-3'>Subscribe</button>
+                    </div>
                 </div>
             </div>
             <div className='text-center text-white underline border-t border-white pt-10'>
-                <h1>@2025 Your Company All Rights Reserved.</h1>
+                <h1 className='font-bold text-xl'>@2025 Your Company All Rights Reserved.</h1>
             </div>
         </div>
     );
