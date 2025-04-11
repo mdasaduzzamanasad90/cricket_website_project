@@ -17,6 +17,13 @@ const Main = () => {
         setplayercardi(allplayercard);
         
     }
+    // remove button
+    const removebutton =(playerdata)=>{
+
+        const removeworkbutton = playercardi.filter( player => player.id !== playerdata);
+        setplayercardi(removeworkbutton);
+
+    }
 
 
     useEffect(()=>{
@@ -30,10 +37,14 @@ const Main = () => {
         const takeid = document.getElementById('abailableid');
         const takeid1 = document.getElementById('selectedid');
 
-        const playertitle = document.getElementById("playerstitle");
-        playertitle.innerHTML = `<h1>Selected Player (${playercardi.length}/6)</h1>`
+        const playertitleavailable = document.getElementById("playerstitleavailable");
+        playertitleavailable.classList.add('hidden');
+        const playertitleselected = document.getElementById("playerstitleselected");
+        playertitleselected.classList.remove('hidden');
+
         takeid1.classList.add("bg-[#E7FE29]");
         takeid.classList.remove("bg-[#E7FE29]");
+
         const availablesection = document.getElementById('availabledisplay');
         availablesection.classList.add('hidden');
         const selectedplayer = document.getElementById('seletdeplayer');
@@ -46,11 +57,15 @@ const Main = () => {
 
         const takeid = document.getElementById('abailableid');
         const takeid1 = document.getElementById('selectedid');
-        const playertitle = document.getElementById("playerstitle");
 
-        playertitle.innerHTML =` <h1>Available Players</h1>`
+        const playertitleavailable = document.getElementById("playerstitleavailable");
+        playertitleavailable.classList.remove('hidden');
+        const playertitleselected = document.getElementById("playerstitleselected");
+        playertitleselected.classList.add('hidden');
+
         takeid1.classList.remove("bg-[#E7FE29]");
         takeid.classList.add("bg-[#E7FE29]");
+        
         const availablesection = document.getElementById('availabledisplay');
         availablesection.classList.remove('hidden');
         const selectedplayer = document.getElementById('seletdeplayer');
@@ -61,9 +76,8 @@ const Main = () => {
     return (
         <main className='mx-40'>
             <div className="flex justify-between my-16 items-center">
-                <div id="playerstitle" className="font-bold text-2xl">
-                    <h1>Available Players</h1>
-                </div>
+                 <h1 id="playerstitleavailable" className="font-bold text-2xl">Available Players</h1>
+                 <h1 id="playerstitleselected" className="font-bold text-2xl hidden">Selected Player ({playercardi.length}/6)</h1>
                 <div className="space-x-5">
                     <button onClick={abailableclickbutton} id="abailableid" className="text-lg py-2 px-4 rounded-lg bg-[#E7FE29] border font-bold">Available</button>
                     <button onClick={selectedclickbutton} id="selectedid" className="text-lg py-2 px-4 rounded-lg border font-bold">Selected({playercardi.length})</button>
@@ -75,7 +89,7 @@ const Main = () => {
                 }
             </div>
             <div id="seletdeplayer" className="hidden">
-                <Playercards abailableclickbutton={abailableclickbutton} playercardi={playercardi}></Playercards>
+                <Playercards abailableclickbutton={abailableclickbutton} playercardi={playercardi} removebutton={removebutton}></Playercards>
             </div>
             <div className="bg-white secion text-center mx-5 py-28 relative z-20 top-40 rounded-3xl">
                 <h1 className="font-bold text-4xl mb-2">Subscribe to our Newsletter</h1>

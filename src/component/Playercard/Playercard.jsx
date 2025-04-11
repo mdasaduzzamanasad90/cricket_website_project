@@ -1,8 +1,8 @@
 import { AiTwotoneDelete } from "react-icons/ai";
 import PropTypes from "prop-types";
 
-const Playercard = ({playerdata}) => {
-    const {image,name,role,country,biddingPrice} = playerdata;
+const Playercard = ({playerdata,removebutton}) => {
+    const {id,image,name,role,country,biddingPrice} = playerdata;
     return (
         <div className="flex items-center justify-between border p-5 rounded-xl">
             <div className="flex gap-5 items-center">
@@ -19,7 +19,7 @@ const Playercard = ({playerdata}) => {
                 </div>
             </div>
             <div>
-                <button><AiTwotoneDelete className="w-7 h-7 text-red-500 " /></button>
+                <button onClick={()=>removebutton(id)}><AiTwotoneDelete className="w-7 h-7 text-red-500 " /></button>
             </div>
         </div>
     );
@@ -27,6 +27,7 @@ const Playercard = ({playerdata}) => {
 
 Playercard.PropTypes ={
     playerdata: PropTypes.object.isRequired,
+    removebutton: PropTypes.func,
 }
 
 export default Playercard;
