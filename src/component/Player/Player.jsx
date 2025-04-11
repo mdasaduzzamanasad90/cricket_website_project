@@ -2,7 +2,7 @@ import { FaUser } from 'react-icons/fa';
 import { IoFlagSharp } from "react-icons/io5";
 import PropTypes from "prop-types";
 
-const Player = ({player}) => {
+const Player = ({player,addplayercard}) => {
 
     const {image,name,country,role,battingStyle,bowlingStyle,biddingPrice} = player;
 
@@ -30,7 +30,7 @@ const Player = ({player}) => {
                 {bowlingStyle === null?<h1>Not Available</h1>:<h1>{bowlingStyle}</h1>}
                 <div className='flex justify-between items-center'>
                     <h1>Price : ${biddingPrice}</h1>
-                    <button className='border w-32 py-1 rounded-lg'>Choose Player</button>
+                    <button onClick={()=>addplayercard(player)} className='border w-32 py-1 rounded-lg'>Choose Player</button>
                 </div>
             </div>
         </div>
@@ -39,6 +39,7 @@ const Player = ({player}) => {
 
 Player.PropTypes = {
     player: PropTypes.object.isRequired,
+    addplayercard:PropTypes.func
 }
 
 export default Player;

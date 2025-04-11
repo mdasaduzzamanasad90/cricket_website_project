@@ -2,31 +2,77 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Player from '../Player/Player'
 import './Main.css'
+import Playercards from "../Playercards/Playercards";
 
 
 
 const Main = () => {
     const [card , setcard] = useState([]);
+    const [playercardi,setplayercardi] = useState([]);
+    console.log(playercardi);
+
+
+    const addplayercard = (playerdata) =>{
+        const allplayercard = [...playercardi , playerdata];
+        setplayercardi(allplayercard);
+        
+    }
 
     useEffect(()=>{
         fetch('Data.json')
         .then(res => res.json())
         .then(data => setcard(data))
     },[])
+// seleected button
+    const selectedclickbutton = () =>{
+
+        const takeid = document.getElementById('abailableid');
+        const takeid1 = document.getElementById('selectedid');
+
+        const playertitle = document.getElementById("playerstitle");
+        playertitle.innerText = "Selected Player (0/6)"
+        takeid1.classList.add("bg-[#E7FE29]");
+        takeid.classList.remove("bg-[#E7FE29]");
+        const availablesection = document.getElementById('availabledisplay');
+        availablesection.classList.add('hidden');
+        const selectedplayer = document.getElementById('seletdeplayer');
+        selectedplayer.classList.remove('hidden');
+
+    };
+
+    // available button
+    const abailableclickbutton =()=>{
+
+        const takeid = document.getElementById('abailableid');
+        const takeid1 = document.getElementById('selectedid');
+        const playertitle = document.getElementById("playerstitle");
+
+        playertitle.innerText = "Available Players"
+        takeid1.classList.remove("bg-[#E7FE29]");
+        takeid.classList.add("bg-[#E7FE29]");
+        const availablesection = document.getElementById('availabledisplay');
+        availablesection.classList.remove('hidden');
+        const selectedplayer = document.getElementById('seletdeplayer');
+        selectedplayer.classList.add('hidden');
+
+    };
 
     return (
         <main className='mx-40'>
             <div className="flex justify-between my-16 items-center">
-                <h1 className="font-bold text-2xl">Available Players</h1>
+                <h1 id="playerstitle" className="font-bold text-2xl">Available Players</h1>
                 <div className="space-x-5">
-                    <button className="text-lg py-2 px-4 rounded-lg bg-[#E7FE29] border font-bold">Available</button>
-                    <button className="text-lg py-2 px-4 rounded-lg border font-bold">Selected</button>
+                    <button onClick={abailableclickbutton} id="abailableid" className="text-lg py-2 px-4 rounded-lg bg-[#E7FE29] border font-bold">Available</button>
+                    <button onClick={selectedclickbutton} id="selectedid" className="text-lg py-2 px-4 rounded-lg border font-bold">Selected(0)</button>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-5">
+            <div id="availabledisplay" className="grid grid-cols-3 gap-5">
                 {
-                    card.map((player) => (<Player key={player.id} player={player}></Player>))
+                    card.map((player, idx) => (<Player key={idx} player={player} addplayercard={addplayercard}></Player>))
                 }
+            </div>
+            <div id="seletdeplayer" className="hidden">
+                <Playercards abailableclickbutton={abailableclickbutton} playercardi={playercardi}></Playercards>
             </div>
             <div className="bg-white secion text-center mx-5 py-28 relative z-20 top-40 rounded-3xl">
                 <h1 className="font-bold text-4xl mb-2">Subscribe to our Newsletter</h1>
