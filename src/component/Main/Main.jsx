@@ -9,14 +9,15 @@ import Playercards from "../Playercards/Playercards";
 const Main = () => {
     const [card , setcard] = useState([]);
     const [playercardi,setplayercardi] = useState([]);
-    console.log(playercardi);
 
 
     const addplayercard = (playerdata) =>{
+        console.log(playerdata);
         const allplayercard = [...playercardi , playerdata];
         setplayercardi(allplayercard);
         
     }
+
 
     useEffect(()=>{
         fetch('Data.json')
@@ -30,7 +31,7 @@ const Main = () => {
         const takeid1 = document.getElementById('selectedid');
 
         const playertitle = document.getElementById("playerstitle");
-        playertitle.innerText = "Selected Player (0/6)"
+        playertitle.innerHTML = `<h1>Selected Player (${playercardi.length}/6)</h1>`
         takeid1.classList.add("bg-[#E7FE29]");
         takeid.classList.remove("bg-[#E7FE29]");
         const availablesection = document.getElementById('availabledisplay');
@@ -47,7 +48,7 @@ const Main = () => {
         const takeid1 = document.getElementById('selectedid');
         const playertitle = document.getElementById("playerstitle");
 
-        playertitle.innerText = "Available Players"
+        playertitle.innerHTML =` <h1>Available Players</h1>`
         takeid1.classList.remove("bg-[#E7FE29]");
         takeid.classList.add("bg-[#E7FE29]");
         const availablesection = document.getElementById('availabledisplay');
@@ -60,10 +61,12 @@ const Main = () => {
     return (
         <main className='mx-40'>
             <div className="flex justify-between my-16 items-center">
-                <h1 id="playerstitle" className="font-bold text-2xl">Available Players</h1>
+                <div id="playerstitle" className="font-bold text-2xl">
+                    <h1>Available Players</h1>
+                </div>
                 <div className="space-x-5">
                     <button onClick={abailableclickbutton} id="abailableid" className="text-lg py-2 px-4 rounded-lg bg-[#E7FE29] border font-bold">Available</button>
-                    <button onClick={selectedclickbutton} id="selectedid" className="text-lg py-2 px-4 rounded-lg border font-bold">Selected(0)</button>
+                    <button onClick={selectedclickbutton} id="selectedid" className="text-lg py-2 px-4 rounded-lg border font-bold">Selected({playercardi.length})</button>
                 </div>
             </div>
             <div id="availabledisplay" className="grid grid-cols-3 gap-5">

@@ -19,7 +19,7 @@ const Playercard = ({playerdata}) => {
                 </div>
             </div>
             <div>
-                <button><AiTwotoneDelete className="w-7 h-7" /></button>
+                <button><AiTwotoneDelete className="w-7 h-7 text-red-500 " /></button>
             </div>
         </div>
     );
