@@ -2,15 +2,11 @@
 import logo from '../../assets/images/logo.png';
 import cricketimgbatbol from '../../assets/images/banner-main.png'
 import './Header.css'
-import { useState } from 'react';
-const Header = () => {
-const [addtaka , settaka ] = useState(0);
-const addmoney =()=>{
+import PropTypes from 'prop-types';
 
-    const summoney = addtaka + 100000000 ;
-    settaka(summoney);
+const Header = ({addmoney,addtaka}) => {
 
-}
+
 
     return (
         <div className='mx-40'>
@@ -40,5 +36,13 @@ const addmoney =()=>{
         
     );
 };
+
+
+Header.PropTypes={
+
+    addmoney: PropTypes.func,
+    addtaka: PropTypes.number,
+
+}
 
 export default Header;

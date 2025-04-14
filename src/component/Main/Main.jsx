@@ -3,19 +3,24 @@ import { useState } from "react";
 import Player from '../Player/Player'
 import './Main.css'
 import Playercards from "../Playercards/Playercards";
+import PropTypes from "prop-types";
 
 
 
-const Main = () => {
+const Main = ({playerpricefunction}) => {
     const [card , setcard] = useState([]);
     const [playercardi,setplayercardi] = useState([]);
 
 
     const addplayercard = (playerdata) =>{
-        console.log(playerdata);
+
         const allplayercard = [...playercardi , playerdata];
         setplayercardi(allplayercard);
-        
+        playerpricefunction(playerdata.biddingPrice);
+
+        const choosebutton = document.getElementById(playerdata.id);
+        choosebutton.innerText = 'Selected';
+        choosebutton.classList.add('bg-[#E7FE29]');
     }
     // remove button
     const removebutton =(playerdata)=>{
@@ -102,5 +107,10 @@ const Main = () => {
         </main>
     );
 };
+
+
+Main.PropTypes={
+    playerpricefunction: PropTypes.func,
+}
 
 export default Main;
