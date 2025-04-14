@@ -11,7 +11,10 @@ function App() {
   const notify = () => toast.success('Successfull ! You Claim Free Credit');
   const notify2 = () => toast.success('Successfull ! Your Player is Selected');
   const notify1 = () => toast.warn('Sorry! You Have Not Enough Money! Please Check and Recharge Your Balance');
+
   const [addtaka , settaka ] = useState(0);
+  const [playercardi,setplayercardi] = useState([]);
+
   
   const addmoney =()=>{
       notify();
@@ -20,20 +23,31 @@ function App() {
 
   }
   
-  const playerpricefunction = (Playercardprice) => {
-    if (addtaka >= Playercardprice) {
-      const sum = addtaka - Playercardprice ;
-      settaka(sum);
-      notify2();
+  const addplayercard = (playerdata) =>{
+    const priceplayer = playerdata.biddingPrice;
+    if (addtaka >= priceplayer) {
       
-    } 
+      const sum = addtaka - priceplayer;
+      settaka(sum);
 
+      const allplayercard = [...playercardi , playerdata];
+      setplayercardi(allplayercard);
+
+      const choosebutton = document.getElementById(playerdata.id);
+      choosebutton.innerText = 'Selected';
+      choosebutton.classList.add('bg-[#E7FE29]');
+
+      notify2();
+
+
+    }
     else{
+
       notify1();
       return;
+      
     }
-
-  };
+};
 
   return (
     <>
@@ -51,7 +65,7 @@ function App() {
         theme="light"
         transition={Bounce}
       />
-      <Main playerpricefunction={playerpricefunction}></Main>
+      <Main playercardi={playercardi} setplayercardi={setplayercardi} addplayercard={addplayercard}></Main>
       <Footer></Footer>
 
     </>

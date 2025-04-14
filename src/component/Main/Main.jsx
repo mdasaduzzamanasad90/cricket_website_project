@@ -7,21 +7,11 @@ import PropTypes from "prop-types";
 
 
 
-const Main = ({playerpricefunction}) => {
+const Main = ({playercardi,setplayercardi,addplayercard}) => {
     const [card , setcard] = useState([]);
-    const [playercardi,setplayercardi] = useState([]);
+    
 
 
-    const addplayercard = (playerdata) =>{
-
-        const allplayercard = [...playercardi , playerdata];
-        setplayercardi(allplayercard);
-        playerpricefunction(playerdata.biddingPrice);
-
-        const choosebutton = document.getElementById(playerdata.id);
-        choosebutton.innerText = 'Selected';
-        choosebutton.classList.add('bg-[#E7FE29]');
-    }
     // remove button
     const removebutton =(playerdata)=>{
 
@@ -110,7 +100,10 @@ const Main = ({playerpricefunction}) => {
 
 
 Main.PropTypes={
-    playerpricefunction: PropTypes.func,
+    playercardi: PropTypes.object.isRequired,    
+    setplayercardi: PropTypes.func,
+    addplayercard: PropTypes.func,
+
 }
 
 export default Main;
