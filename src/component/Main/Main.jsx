@@ -7,19 +7,9 @@ import PropTypes from "prop-types";
 
 
 
-const Main = ({playercardi,setplayercardi,addplayercard}) => {
+const Main = ({playercardi,removebutton,addplayercard}) => {
     const [card , setcard] = useState([]);
     
-
-
-    // remove button
-    const removebutton =(playerdata)=>{
-
-        const removeworkbutton = playercardi.filter( player => player.id !== playerdata);
-        setplayercardi(removeworkbutton);
-
-    }
-
 
     useEffect(()=>{
         fetch('Data.json')
@@ -103,6 +93,7 @@ Main.PropTypes={
     playercardi: PropTypes.object.isRequired,    
     setplayercardi: PropTypes.func,
     addplayercard: PropTypes.func,
+    removebutton: PropTypes.func,
 
 }
 

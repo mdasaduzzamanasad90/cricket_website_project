@@ -22,8 +22,8 @@ const Footer = () => {
                 <div className='text-white'>
                     <h1 className='font-bold text-xl mb-5'>Subscribe</h1>
                     <p className='text-left mb-3'>Subscribe to our newsletter for the <br /> latest updates.</p>
-                    <div className=''>
-                        <input className='border rounded-l-lg px-3 h-8' placeholder="Enter your email" type="email" name="" id="" />
+                    <div className='space-x-2'>
+                        <input className='border rounded-l-lg px-3 h-8 text-black' placeholder="Enter your email" type="email" name="" id="" />
                         <button className='font-bold border h-8 rounded-r-lg px-3'>Subscribe</button>
                     </div>
                 </div>

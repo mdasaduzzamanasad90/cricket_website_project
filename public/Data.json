@@ -58,6 +58,66 @@
       "battingStyle": "Right-hand bat",
       "bowlingStyle": "Right-arm offbreak",
       "biddingPrice": 1100000
+    },
+    {
+      "id": 7,
+      "name": "Babar Azam",
+      "country": "Pakistan",
+      "image": "https://i.ibb.co.com/4ncFsnBB/Babar-Azam.jpg",
+      "role": "Batsman",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm offbreak",
+      "biddingPrice": 1400000
+    },
+    {
+      "id": 8,
+      "name": "Jasprit Bumrah",
+      "country": "India",
+      "image": "https://i.ibb.co.com/JFt6JNdS/Jasprit-Bumrah.webp",
+      "role": "Bowler",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm fast",
+      "biddingPrice": 1750000
+    },
+    {
+      "id": 9,
+      "name": "David Warner",
+      "country": "Australia",
+      "image": "https://i.ibb.co.com/xSFNbkHP/David-Warner.jpg",
+      "role": "Batsman",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Legbreak",
+      "biddingPrice": 1250000
+    },
+    {
+      "id": 10,
+      "name": "Rashid Khan",
+      "country": "Afghanistan",
+      "image": "https://i.ibb.co.com/C3WvY63Y/Rashid-Khan.jpg",
+      "role": "Bowler",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm legbreak",
+      "biddingPrice": 1600000
+    },
+    {
+      "id": 11,
+      "name": "Quinton de Kock",
+      "country": "South Africa",
+      "image": "https://i.ibb.co.com/qLG2TsjV/Quinton-de-Kock.jpg",
+      "role": "Wicketkeeper",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": null,
+      "biddingPrice": 1350000
+    },
+    {
+      "id": 12,
+      "name": "Glenn Maxwell",
+      "country": "Australia",
+      "image": "https://i.ibb.co.com/JwJK0nhG/Glenn-Maxwell.jpg",
+      "role": "All-Rounder",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm offbreak",
+      "biddingPrice": 1450000
     }
     
   ]
